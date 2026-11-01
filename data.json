@@ -4,6 +4,11 @@
       "person": "Afnaan Ladji",
       "startDate": "2026-11-06",
       "endDate": "2026-11-06"
+    },
+    {
+      "person": "Subham Srivastava",
+      "startDate": "2026-11-06",
+      "endDate": "2026-11-06"
     }
   ],
   "holidays": [
@@ -69,5 +74,5 @@
     }
   ],
   "version": "1.0",
-  "lastUpdated": "2026-11-01T14:46:50.711Z"
+  "lastUpdated": "2026-11-01T15:10:42.537Z"
 }
