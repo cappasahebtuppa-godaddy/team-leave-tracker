@@ -287,6 +287,81 @@
             border-color: var(--danger);
         }
 
+        /* Individual team member colors */
+        .calendar-day.chetan {
+            background: #dbeafe;
+            border-color: #3b82f6;
+        }
+
+        .calendar-day.subham {
+            background: #d1fae5;
+            border-color: #10b981;
+        }
+
+        .calendar-day.afnaan {
+            background: #fce7f3;
+            border-color: #ec4899;
+        }
+
+        /* When two people are on leave, show striped pattern */
+        .calendar-day.multiple {
+            background: linear-gradient(135deg, #dbeafe 50%, #d1fae5 50%);
+            border-color: var(--danger);
+        }
+
+        .calendar-day.multiple.chetan-subham {
+            background: linear-gradient(135deg, #dbeafe 50%, #d1fae5 50%);
+        }
+
+        .calendar-day.multiple.chetan-afnaan {
+            background: linear-gradient(135deg, #dbeafe 50%, #fce7f3 50%);
+        }
+
+        .calendar-day.multiple.subham-afnaan {
+            background: linear-gradient(135deg, #d1fae5 50%, #fce7f3 50%);
+        }
+
+        .legend {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            border: 2px solid;
+        }
+
+        .legend-color.chetan {
+            background: #dbeafe;
+            border-color: #3b82f6;
+        }
+
+        .legend-color.subham {
+            background: #d1fae5;
+            border-color: #10b981;
+        }
+
+        .legend-color.afnaan {
+            background: #fce7f3;
+            border-color: #ec4899;
+        }
+
+        .legend-color.holiday {
+            background: #fef3c7;
+            border-color: var(--warning);
+        }
+
         .day-number {
             font-weight: 600;
             margin-bottom: 0.25rem;

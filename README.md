@@ -1,109 +1,102 @@
 # 🏖️ Team Leave Tracker
 
-A leave management tool for our team (Chetan Tuppad, Subham Srivastava, Afnaan Ladji) with **two versions available**.
+> A leave management system for teams with centralized SharePoint integration
 
-## 🌐 Live Application
+**Live App:** [https://cappasahebtuppa-godaddy.github.io/team-leave-tracker/](https://cappasahebtuppa-godaddy.github.io/team-leave-tracker/)
 
-**Access the tracker here:** `https://cappasahebtuppa-godaddy.github.io/team-leave-tracker/`
+**Team:** Chetan Tuppad • Subham Srivastava • Afnaan Ladji
 
-## 📦 Two Versions Available
+---
 
-### 1️⃣ Browser Storage Version (Current - Simple)
-- Data stored in browser localStorage
-- Manual export/import for team sync
-- No authentication required
-- **Perfect for**: Quick setup, small teams
+## 🎯 Quick Start
 
-### 2️⃣ SharePoint Version (Recommended - Enterprise)
-- ✅ Centralized data in SharePoint Lists
-- ✅ Automatic sync across all users
+### Current Version (Browser Storage)
+- ✅ Already live at the URL above
+- ✅ Works immediately, no setup
+- ⚠️ Requires manual export/import to sync between users
+
+### Upgrade to SharePoint (Recommended)
+- ✅ Centralized data storage
+- ✅ Automatic sync for all team members
 - ✅ Microsoft 365 authentication
-- ✅ Enterprise-ready security
-- **Perfect for**: Teams using Microsoft 365
+- ⏱️ 30-60 minutes setup time
 
-📊 **See [COMPARISON.md](COMPARISON.md) for detailed comparison**
+**[📚 Setup SharePoint Version →](docs/SHAREPOINT_SETUP_GUIDE.md)**
+
+---
+
+## 📖 Documentation
+
+### Setup Guides
+- **[SharePoint Setup Guide](docs/SHAREPOINT_SETUP_GUIDE.md)** - Complete setup instructions
+- **[Manual SharePoint Setup](docs/MANUAL_SHAREPOINT_SETUP.md)** - Quick 5-minute manual method
+- **[Quick Start Guide](docs/NEXT_STEPS.md)** - TL;DR version with checklist
+
+### Reference
+- **[Browser vs SharePoint Comparison](docs/COMPARISON.md)** - Feature comparison
+- **[Deployment Guide (Browser Version)](docs/DEPLOYMENT.md)** - Original deployment
+
+### Scripts
+- `setup-sharepoint-lists.ps1` - Automated SharePoint list creation
+- `deploy-sharepoint.sh` - Deploy SharePoint version to GitHub Pages
+- `deploy.sh` - Deploy browser storage version
+
+---
 
 ## ✨ Features
 
+### Core Features
 - ✅ **Coverage Protection** - Ensures at least 1 team member is always available
-- ✅ **Pre-loaded 2026 Public Holidays** - All 14 holidays including Wellness Days, Diwali, Christmas
-- ✅ **Visual Calendar** - Month-by-month view with color-coded leaves and holidays
-- ✅ **Export/Import Data** - Share leave data with team members via JSON files
-- ✅ **Statistics Dashboard** - Track total leaves, holidays, and coverage rate
-- ✅ **Mobile-Responsive** - Works on desktop and mobile devices
+- ✅ **Visual Calendar** - Month-by-month view with color coding
+- ✅ **Pre-loaded 2026 Holidays** - All 14 Indian holidays included
+- ✅ **Statistics Dashboard** - Track total leaves and coverage rate
+- ✅ **Mobile Responsive** - Works on all devices
 
-## 🎯 How to Use
+### SharePoint Version Adds
+- ✅ **Centralized Data** - All data in SharePoint Lists
+- ✅ **Automatic Sync** - No export/import needed
+- ✅ **Microsoft 365 Auth** - Secure authentication
+- ✅ **Real-time Updates** - Everyone sees the same data
+- ✅ **Audit Trail** - SharePoint versioning built-in
 
-### Adding Your Leave
+---
 
-1. Open the tracker in your browser
-2. Select your name from the "Team Member" dropdown
-3. Choose start and end dates
-4. Click "Add Leave"
-   - System automatically validates that at least 1 person remains available
-   - If validation fails, adjust your dates
+## 🚀 Deployment Status
 
-### Sharing Updates with Team
+| Version | Status | URL |
+|---------|--------|-----|
+| Browser Storage | ✅ Live | [View App](https://cappasahebtuppa-godaddy.github.io/team-leave-tracker/) |
+| SharePoint | ⏳ Setup Required | [Setup Guide](docs/SHAREPOINT_SETUP_GUIDE.md) |
 
-1. After adding your leave, click **"💾 Export Data"**
-2. Save the JSON file
-3. Share it via:
-   - Upload to SharePoint/Teams
-   - Email to team members
-   - Commit to this repo (recommended)
+---
 
-### Importing Team Updates
+## 📋 SharePoint Setup Checklist
 
-1. Download the latest JSON file (from repo, SharePoint, or email)
-2. Click **"📥 Import Data"** in the tracker
-3. Select the JSON file
-4. Confirm import
+Follow these steps to enable SharePoint integration:
 
-## 📅 Pre-loaded 2026 Public Holidays
+- [ ] **Step 1:** [Create SharePoint Lists](docs/MANUAL_SHAREPOINT_SETUP.md) (5 min)
+  - [ ] TeamLeaves list with Person, StartDate, EndDate columns
+  - [ ] PublicHolidays list with HolidayName, HolidayDate columns
 
-| Date | Holiday |
-|------|---------|
-| Jan 1, 2026 | New Year's Day |
-| Jan 26, 2026 | Republic Day |
-| Mar 13, 2026 | Wellness Day |
-| Apr 3, 2026 | Good Friday |
-| May 1, 2026 | May Day |
-| May 15, 2026 | Wellness Day |
-| May 27, 2026 | Bakrid / Eid al-Adha |
-| Aug 14, 2026 | Wellness Day |
-| Aug 15, 2026 | Independence Day |
-| Oct 2, 2026 | Mahatma Gandhi Jayanti |
-| Oct 9, 2026 | Wellness Day |
-| Nov 8, 2026 | Diwali |
-| Nov 9, 2026 | Diwali Break |
-| Dec 25, 2026 | Christmas Day |
+- [ ] **Step 2:** [Register Azure AD App](docs/SHAREPOINT_SETUP_GUIDE.md#step-2-register-azure-ad-application) (15 min)
+  - [ ] Get client ID and tenant ID
+  - [ ] Configure redirect URIs
 
-## 🚀 Quick Start
+- [ ] **Step 3:** [Configure API Permissions](docs/SHAREPOINT_SETUP_GUIDE.md#step-3-configure-api-permissions) (10 min)
+  - [ ] Add Microsoft Graph permissions
+  - [ ] Add SharePoint permissions
+  - [ ] Grant admin consent
 
-### Using Current Version (Browser Storage)
+- [ ] **Step 4:** [Update Configuration](docs/SHAREPOINT_SETUP_GUIDE.md#step-4-configure-the-application) (5 min)
+  - [ ] Edit `index-sharepoint.html`
+  - [ ] Update CONFIG section
 
-1. Open: `https://cappasahebtuppa-godaddy.github.io/team-leave-tracker/`
-2. Add your leaves
-3. Export data and share with team
-4. Others import to sync
+- [ ] **Step 5:** [Deploy](docs/NEXT_STEPS.md) (2 min)
+  - [ ] Run `./deploy-sharepoint.sh`
 
-### Upgrading to SharePoint Version
+**Total Time:** 30-60 minutes
 
-1. Follow [SHAREPOINT_SETUP_GUIDE.md](SHAREPOINT_SETUP_GUIDE.md)
-2. Run `./deploy-sharepoint.sh`
-3. Done! Automatic sync enabled
-
-## 🔄 Data Synchronization
-
-### Browser Storage Version
-- Manual export/import JSON files
-- Share via email/Teams/SharePoint
-- See [DEPLOYMENT.md](DEPLOYMENT.md)
-
-### SharePoint Version
-- ✅ Automatic sync (no export/import)
-- ✅ Real-time updates
-- See [SHAREPOINT_SETUP_GUIDE.md](SHAREPOINT_SETUP_GUIDE.md)
+---
 
 ## 🎨 Calendar Color Coding
 
@@ -111,23 +104,89 @@ A leave management tool for our team (Chetan Tuppad, Subham Srivastava, Afnaan L
 - 🔵 **Blue** - Someone on leave (1 person)
 - 🔴 **Red** - Two people away (critical coverage)
 
-## 🛠️ Technical Details
+---
 
-- **Technology**: Pure HTML/CSS/JavaScript (no dependencies)
-- **Storage**: Browser localStorage (client-side)
-- **Data Format**: JSON for export/import
-- **Hosting**: GitHub Pages (static site)
+## 📅 Pre-loaded 2026 Holidays
 
-## 👥 Team Members
+| Date | Holiday |
+|------|---------|
+| Jan 1 | New Year's Day |
+| Jan 26 | Republic Day |
+| Mar 13 | Wellness Day |
+| Apr 3 | Good Friday |
+| May 1 | May Day |
+| May 15 | Wellness Day |
+| May 27 | Bakrid / Eid al-Adha |
+| Aug 14 | Wellness Day |
+| Aug 15 | Independence Day |
+| Oct 2 | Mahatma Gandhi Jayanti |
+| Oct 9 | Wellness Day |
+| Nov 8 | Diwali |
+| Nov 9 | Diwali Break |
+| Dec 25 | Christmas Day |
 
+---
+
+## 🔧 Technology Stack
+
+- **Frontend:** Pure HTML/CSS/JavaScript (no framework)
+- **Authentication:** MSAL.js (Microsoft Authentication Library)
+- **Backend:** SharePoint REST API
+- **Hosting:** GitHub Pages (static site)
+- **Storage:** 
+  - Browser version: localStorage
+  - SharePoint version: SharePoint Lists
+
+---
+
+## 📱 Browser Support
+
+- ✅ Chrome/Edge (latest)
+- ✅ Firefox (latest)
+- ✅ Safari (latest)
+- ✅ Mobile browsers
+
+---
+
+## 🤝 Contributing
+
+This is a private team tracker. For issues or enhancements:
+1. Create an issue in this repository
+2. Contact team members directly
+
+---
+
+## 📞 Support
+
+### For Setup Help
+- See [SHAREPOINT_SETUP_GUIDE.md](docs/SHAREPOINT_SETUP_GUIDE.md) troubleshooting section
+- Check [NEXT_STEPS.md](docs/NEXT_STEPS.md) for quick reference
+
+### For Issues
+- Browser console errors
+- SharePoint connection issues
+- Authentication problems
+
+### Team Contacts
 - Chetan Tuppad
 - Subham Srivastava
 - Afnaan Ladji
 
-## 📝 Version History
+---
 
-- **v1.0** (Nov 2026) - Initial release with 2026 holidays and export/import functionality
+## 📄 License
+
+Internal use only - GoDaddy team project
 
 ---
 
-Made with ❤️ for team collaboration
+## 🎉 Quick Links
+
+- **[View Live App →](https://cappasahebtuppa-godaddy.github.io/team-leave-tracker/)**
+- **[Setup SharePoint →](docs/SHAREPOINT_SETUP_GUIDE.md)**
+- **[Compare Versions →](docs/COMPARISON.md)**
+- **[Manual Setup (5 min) →](docs/MANUAL_SHAREPOINT_SETUP.md)**
+
+---
+
+Made with ❤️ for better team collaboration
