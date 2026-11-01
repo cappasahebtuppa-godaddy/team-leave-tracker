@@ -2,15 +2,21 @@
   "leaves": [],
   "compOffs": {
     "Chetan Tuppad": {
-      "earned": 3,
+      "earned": 4,
       "used": 0,
-      "balance": 3,
+      "balance": 4,
       "history": [
         {
           "type": "earned",
           "days": 3,
           "date": "2026-11-01T18:40:43.701Z",
           "reason": "2 Balance for working on Security Incident. 2 for Working on Akamai Onboarding Requests"
+        },
+        {
+          "type": "earned",
+          "days": 1,
+          "date": "2026-11-01T18:40:51.036Z",
+          "reason": "Working on Akamai Onboarding Requests"
         }
       ]
     },
@@ -86,5 +92,5 @@
     }
   ],
   "version": "1.0",
-  "lastUpdated": "2026-11-01T18:40:43.702Z"
+  "lastUpdated": "2026-11-01T18:40:51.036Z"
 }
