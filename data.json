@@ -2,11 +2,6 @@
   "leaves": [
     {
       "person": "Chetan Tuppad",
-      "startDate": "2026-11-10",
-      "endDate": "2026-11-10"
-    },
-    {
-      "person": "Chetan Tuppad",
       "startDate": "2026-12-21",
       "endDate": "2026-12-24"
     },
@@ -140,5 +135,5 @@
     }
   ],
   "version": "1.0",
-  "lastUpdated": "2026-11-01T18:23:50.032Z"
+  "lastUpdated": "2026-11-01T18:23:52.325Z"
 }
