@@ -1,12 +1,27 @@
 # 🏖️ Team Leave Tracker
 
-A simple, client-side leave management tool for our team (Chetan Tuppad, Subham Srivastava, Afnaan Ladji).
+A leave management tool for our team (Chetan Tuppad, Subham Srivastava, Afnaan Ladji) with **two versions available**.
 
 ## 🌐 Live Application
 
-**Access the tracker here:** `https://YOUR_USERNAME.github.io/team-leave-tracker/`
+**Access the tracker here:** `https://cappasahebtuppa-godaddy.github.io/team-leave-tracker/`
 
-*(Update this URL after deploying to GitHub Pages)*
+## 📦 Two Versions Available
+
+### 1️⃣ Browser Storage Version (Current - Simple)
+- Data stored in browser localStorage
+- Manual export/import for team sync
+- No authentication required
+- **Perfect for**: Quick setup, small teams
+
+### 2️⃣ SharePoint Version (Recommended - Enterprise)
+- ✅ Centralized data in SharePoint Lists
+- ✅ Automatic sync across all users
+- ✅ Microsoft 365 authentication
+- ✅ Enterprise-ready security
+- **Perfect for**: Teams using Microsoft 365
+
+📊 **See [COMPARISON.md](COMPARISON.md) for detailed comparison**
 
 ## ✨ Features
 
@@ -63,26 +78,32 @@ A simple, client-side leave management tool for our team (Chetan Tuppad, Subham 
 | Nov 9, 2026 | Diwali Break |
 | Dec 25, 2026 | Christmas Day |
 
+## 🚀 Quick Start
+
+### Using Current Version (Browser Storage)
+
+1. Open: `https://cappasahebtuppa-godaddy.github.io/team-leave-tracker/`
+2. Add your leaves
+3. Export data and share with team
+4. Others import to sync
+
+### Upgrading to SharePoint Version
+
+1. Follow [SHAREPOINT_SETUP_GUIDE.md](SHAREPOINT_SETUP_GUIDE.md)
+2. Run `./deploy-sharepoint.sh`
+3. Done! Automatic sync enabled
+
 ## 🔄 Data Synchronization
 
-### Recommended Workflow
+### Browser Storage Version
+- Manual export/import JSON files
+- Share via email/Teams/SharePoint
+- See [DEPLOYMENT.md](DEPLOYMENT.md)
 
-1. **Add your leave** in the tracker
-2. **Export the data** as JSON
-3. **Commit the JSON file** to this repo:
-   ```bash
-   git add team-leave-data.json
-   git commit -m "Updated leaves"
-   git push
-   ```
-4. **Team members pull** the latest data:
-   - Download `team-leave-data.json` from the repo
-   - Import into their tracker
-
-### Alternative: SharePoint
-
-- Upload exported JSON files to SharePoint
-- Team downloads and imports from there
+### SharePoint Version
+- ✅ Automatic sync (no export/import)
+- ✅ Real-time updates
+- See [SHAREPOINT_SETUP_GUIDE.md](SHAREPOINT_SETUP_GUIDE.md)
 
 ## 🎨 Calendar Color Coding
 
