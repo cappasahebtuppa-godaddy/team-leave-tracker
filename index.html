@@ -553,11 +553,18 @@
 
         function getDatesInRange(start, end) {
             const dates = [];
-            const current = new Date(start);
-            const endDate = new Date(end);
+            // Parse dates without timezone conversion
+            const [startYear, startMonth, startDay] = start.split('-').map(Number);
+            const [endYear, endMonth, endDay] = end.split('-').map(Number);
+
+            const current = new Date(startYear, startMonth - 1, startDay);
+            const endDate = new Date(endYear, endMonth - 1, endDay);
 
             while (current <= endDate) {
-                dates.push(new Date(current).toISOString().split('T')[0]);
+                const year = current.getFullYear();
+                const month = String(current.getMonth() + 1).padStart(2, '0');
+                const day = String(current.getDate()).padStart(2, '0');
+                dates.push(`${year}-${month}-${day}`);
                 current.setDate(current.getDate() + 1);
             }
             return dates;
@@ -659,8 +666,8 @@
 
             // Days of month
             for (let day = 1; day <= daysInMonth; day++) {
-                const date = new Date(year, month, day);
-                const dateStr = date.toISOString().split('T')[0];
+                // Format date string without timezone conversion
+                const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
 
                 const isHoliday = holidays.some(h => h.date === dateStr);
                 const leavesOnDate = leaves.filter(leave => {
