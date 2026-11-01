@@ -1,12 +1,5 @@
 {
-  "leaves": [
-    {
-      "person": "Afnaan Ladji",
-      "startDate": "2026-11-06",
-      "endDate": "2026-11-06",
-      "isCompOff": false
-    }
-  ],
+  "leaves": [],
   "compOffs": {
     "Chetan Tuppad": {
       "earned": 4,
@@ -113,5 +106,5 @@
     }
   ],
   "version": "1.0",
-  "lastUpdated": "2026-11-01T18:41:17.395Z"
+  "lastUpdated": "2026-11-01T18:41:26.258Z"
 }
