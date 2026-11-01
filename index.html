@@ -889,6 +889,51 @@
 
                 if (!response.ok) {
                     const errorData = await response.json();
+
+                    // If SHA conflict (409), fetch latest SHA and retry
+                    if (response.status === 409) {
+                        console.log('SHA conflict detected, fetching latest SHA and retrying...');
+
+                        // Fetch just to get the latest SHA, but keep our local data
+                        const fetchResponse = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/contents/${GITHUB_FILE_PATH}`, {
+                            headers: {
+                                'Authorization': `token ${token}`,
+                                'Accept': 'application/vnd.github.v3+json'
+                            }
+                        });
+
+                        if (fetchResponse.ok) {
+                            const fetchData = await fetchResponse.json();
+                            currentFileSha = fetchData.sha;
+
+                            // Retry the save with updated SHA (keep our local changes)
+                            const retryContent = btoa(JSON.stringify(dataToSave, null, 2));
+                            const retryResponse = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/contents/${GITHUB_FILE_PATH}`, {
+                                method: 'PUT',
+                                headers: {
+                                    'Authorization': `token ${token}`,
+                                    'Accept': 'application/vnd.github.v3+json',
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({
+                                    message: `Update leave tracker data - ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}`,
+                                    content: retryContent,
+                                    sha: currentFileSha
+                                })
+                            });
+
+                            if (!retryResponse.ok) {
+                                const retryError = await retryResponse.json();
+                                throw new Error(retryError.message || `Retry failed: ${retryResponse.status}`);
+                            }
+
+                            const retryResult = await retryResponse.json();
+                            currentFileSha = retryResult.content.sha;
+                            updateSyncStatus('', 'Synced with GitHub');
+                            return true;
+                        }
+                    }
+
                     throw new Error(errorData.message || `GitHub API error: ${response.status}`);
                 }
 
