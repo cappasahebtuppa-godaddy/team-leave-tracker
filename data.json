@@ -2,10 +2,17 @@
   "leaves": [],
   "compOffs": {
     "Chetan Tuppad": {
-      "earned": 0,
+      "earned": 3,
       "used": 0,
-      "balance": 0,
-      "history": []
+      "balance": 3,
+      "history": [
+        {
+          "type": "earned",
+          "days": 3,
+          "date": "2026-11-01T18:40:43.701Z",
+          "reason": "2 Balance for working on Security Incident. 2 for Working on Akamai Onboarding Requests"
+        }
+      ]
     },
     "Subham Srivastava": {
       "earned": 0,
@@ -79,5 +86,5 @@
     }
   ],
   "version": "1.0",
-  "lastUpdated": "2026-11-01T18:40:31.778Z"
+  "lastUpdated": "2026-11-01T18:40:43.702Z"
 }
