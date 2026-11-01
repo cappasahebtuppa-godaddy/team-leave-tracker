@@ -46,10 +46,17 @@
       ]
     },
     "Subham Srivastava": {
-      "earned": 0,
+      "earned": 2,
       "used": 0,
-      "balance": 0,
-      "history": []
+      "balance": 2,
+      "history": [
+        {
+          "type": "earned",
+          "days": 2,
+          "date": "2026-11-01T18:20:31.536Z",
+          "reason": " Working on Akamai Onboarding Requests"
+        }
+      ]
     },
     "Afnaan Ladji": {
       "earned": 0,
@@ -117,5 +124,5 @@
     }
   ],
   "version": "1.0",
-  "lastUpdated": "2026-11-01T18:20:24.142Z"
+  "lastUpdated": "2026-11-01T18:20:31.536Z"
 }
