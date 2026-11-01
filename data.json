@@ -25,13 +25,19 @@
       "startDate": "2026-11-16",
       "endDate": "2026-11-17",
       "isCompOff": true
+    },
+    {
+      "person": "Chetan Tuppad",
+      "startDate": "2026-11-25",
+      "endDate": "2026-11-26",
+      "isCompOff": true
     }
   ],
   "compOffs": {
     "Chetan Tuppad": {
       "earned": 4,
-      "used": 2,
-      "balance": 2,
+      "used": 4,
+      "balance": 0,
       "history": [
         {
           "type": "earned",
@@ -44,6 +50,12 @@
           "days": 2,
           "date": "2026-11-01T18:21:58.910Z",
           "reason": "Leave from 2026-11-16 to 2026-11-17"
+        },
+        {
+          "type": "used",
+          "days": 2,
+          "date": "2026-11-01T18:22:21.876Z",
+          "reason": "Leave from 2026-11-25 to 2026-11-26"
         }
       ]
     },
@@ -133,5 +145,5 @@
     }
   ],
   "version": "1.0",
-  "lastUpdated": "2026-11-01T18:21:58.910Z"
+  "lastUpdated": "2026-11-01T18:22:21.876Z"
 }
