@@ -362,6 +362,76 @@
             border-color: var(--warning);
         }
 
+        .compoff-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .compoff-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .compoff-card h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .compoff-balance {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0.5rem 0;
+        }
+
+        .compoff-details {
+            font-size: 0.875rem;
+            opacity: 0.9;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+        }
+
+        .compoff-form {
+            background: #f0f9ff;
+            border: 2px solid #3b82f6;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+            padding: 0.5rem;
+            background: #fef3c7;
+            border-radius: 6px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            cursor: pointer;
+        }
+
+        .checkbox-group label {
+            margin: 0;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .compoff-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .github-setup {
             background: #fef3c7;
             border: 2px solid var(--warning);
@@ -542,7 +612,64 @@
             </div>
         </div>
 
+        <h2 style="margin: 2rem 0 1rem 0; font-size: 1.5rem;">💼 Comp-Off Balance</h2>
+        <div class="compoff-cards">
+            <div class="compoff-card">
+                <h3>Chetan Tuppad</h3>
+                <div class="compoff-balance" id="compoff-chetan">0</div>
+                <div class="compoff-details">
+                    <span>Earned: <span id="earned-chetan">0</span></span>
+                    <span>Used: <span id="used-chetan">0</span></span>
+                </div>
+            </div>
+            <div class="compoff-card">
+                <h3>Subham Srivastava</h3>
+                <div class="compoff-balance" id="compoff-subham">0</div>
+                <div class="compoff-details">
+                    <span>Earned: <span id="earned-subham">0</span></span>
+                    <span>Used: <span id="used-subham">0</span></span>
+                </div>
+            </div>
+            <div class="compoff-card">
+                <h3>Afnaan Ladji</h3>
+                <div class="compoff-balance" id="compoff-afnaan">0</div>
+                <div class="compoff-details">
+                    <span>Earned: <span id="earned-afnaan">0</span></span>
+                    <span>Used: <span id="used-afnaan">0</span></span>
+                </div>
+            </div>
+        </div>
+
         <div class="grid">
+            <div class="card">
+                <h2>➕ Add Comp-Off</h2>
+                <div class="compoff-form">
+                    <p style="margin-bottom: 1rem; font-size: 0.875rem;">
+                        <strong>💡 Add comp-offs earned</strong> for working on weekends or holidays
+                    </p>
+                    <form id="compOffForm">
+                        <div class="form-group">
+                            <label>Team Member</label>
+                            <select id="compOffPerson" required>
+                                <option value="">Select person...</option>
+                                <option value="Chetan Tuppad">Chetan Tuppad</option>
+                                <option value="Subham Srivastava">Subham Srivastava</option>
+                                <option value="Afnaan Ladji">Afnaan Ladji</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Number of Days</label>
+                            <input type="number" id="compOffDays" min="0.5" max="10" step="0.5" placeholder="e.g., 1 or 0.5" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Reason</label>
+                            <input type="text" id="compOffReason" placeholder="e.g., Worked on Saturday" required>
+                        </div>
+                        <button type="submit">➕ Add Comp-Off</button>
+                    </form>
+                </div>
+            </div>
+
             <div class="card">
                 <h2>➕ Add Planned Leave</h2>
                 <form id="leaveForm">
@@ -562,6 +689,10 @@
                     <div class="form-group">
                         <label>End Date</label>
                         <input type="date" id="endDate" required>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="useCompOff">
+                        <label for="useCompOff">Use Comp-Off (if available)</label>
                     </div>
                     <button type="submit">Add Leave</button>
                 </form>
@@ -660,6 +791,11 @@
 
         let leaves = [];
         let holidays = default2026Holidays;
+        let compOffs = {
+            "Chetan Tuppad": { earned: 0, used: 0, balance: 0, history: [] },
+            "Subham Srivastava": { earned: 0, used: 0, balance: 0, history: [] },
+            "Afnaan Ladji": { earned: 0, used: 0, balance: 0, history: [] }
+        };
         let currentMonth = new Date();
 
         // GitHub API functions
@@ -701,7 +837,13 @@
                 const content = JSON.parse(atob(data.content));
                 leaves = content.leaves || [];
                 holidays = content.holidays || default2026Holidays;
+                compOffs = content.compOffs || {
+                    "Chetan Tuppad": { earned: 0, used: 0, balance: 0, history: [] },
+                    "Subham Srivastava": { earned: 0, used: 0, balance: 0, history: [] },
+                    "Afnaan Ladji": { earned: 0, used: 0, balance: 0, history: [] }
+                };
 
+                updateCompOffDisplay();
                 updateSyncStatus('', 'Synced with GitHub');
                 return true;
             } catch (error) {
@@ -723,6 +865,7 @@
 
                 const dataToSave = {
                     leaves: leaves,
+                    compOffs: compOffs,
                     holidays: holidays,
                     version: '1.0',
                     lastUpdated: new Date().toISOString()
@@ -769,6 +912,23 @@
             alert.textContent = message;
             alertContainer.appendChild(alert);
             setTimeout(() => alert.remove(), 5000);
+        }
+
+        function updateCompOffDisplay() {
+            const nameMap = {
+                "Chetan Tuppad": "chetan",
+                "Subham Srivastava": "subham",
+                "Afnaan Ladji": "afnaan"
+            };
+
+            Object.keys(compOffs).forEach(person => {
+                const shortName = nameMap[person];
+                const data = compOffs[person];
+
+                document.getElementById(`compoff-${shortName}`).textContent = data.balance.toFixed(1);
+                document.getElementById(`earned-${shortName}`).textContent = data.earned.toFixed(1);
+                document.getElementById(`used-${shortName}`).textContent = data.used.toFixed(1);
+            });
         }
 
         function getDatesInRange(start, end) {
@@ -825,7 +985,7 @@
             container.innerHTML = leaves.map((leave, index) => `
                 <div class="leave-item">
                     <div class="leave-info">
-                        <div class="leave-person">${leave.person}</div>
+                        <div class="leave-person">${leave.person}${leave.isCompOff ? ' <span style="background: #9b59b6; color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: bold;">COMP-OFF</span>' : ''}</div>
                         <div class="leave-dates">${formatDateString(leave.startDate)} - ${formatDateString(leave.endDate)}</div>
                     </div>
                     <div style="display: flex; align-items: center;">
@@ -936,18 +1096,43 @@
             const person = document.getElementById('personSelect').value;
             const startDate = document.getElementById('startDate').value;
             const endDate = document.getElementById('endDate').value;
+            const useCompOff = document.getElementById('useCompOff').checked;
 
             if (new Date(startDate) > new Date(endDate)) {
                 showAlert('End date must be after start date');
                 return;
             }
 
-            const newLeave = { person, startDate, endDate };
+            // Calculate leave duration
+            const leaveDays = getDatesInRange(startDate, endDate).length;
+
+            // Check comp-off availability if checkbox is checked
+            if (useCompOff) {
+                const availableCompOff = compOffs[person].balance;
+                if (availableCompOff < leaveDays) {
+                    showAlert(`Insufficient comp-off balance. Available: ${availableCompOff.toFixed(1)} days, Required: ${leaveDays} days`);
+                    return;
+                }
+            }
+
+            const newLeave = { person, startDate, endDate, isCompOff: useCompOff };
             const availability = isAvailabilityMaintained(newLeave);
 
             if (!availability.valid) {
                 showAlert(`Cannot add leave: Two team members are already on leave on ${formatDateString(availability.date)}. At least one person must be available.`);
                 return;
+            }
+
+            // Deduct comp-off if used
+            if (useCompOff) {
+                compOffs[person].used += leaveDays;
+                compOffs[person].balance -= leaveDays;
+                compOffs[person].history.push({
+                    type: 'used',
+                    days: leaveDays,
+                    date: new Date().toISOString(),
+                    reason: `Leave from ${startDate} to ${endDate}`
+                });
             }
 
             leaves.push(newLeave);
@@ -956,6 +1141,7 @@
                 renderLeaves();
                 renderCalendar();
                 updateStats();
+                updateCompOffDisplay();
                 showAlert('Leave added successfully! ✓', 'success');
                 e.target.reset();
             }
@@ -978,6 +1164,36 @@
             }
         });
 
+        document.getElementById('compOffForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const person = document.getElementById('compOffPerson').value;
+            const days = parseFloat(document.getElementById('compOffDays').value);
+            const reason = document.getElementById('compOffReason').value;
+
+            if (!person || days <= 0) {
+                showAlert('Please fill all fields correctly');
+                return;
+            }
+
+            // Add earned comp-off
+            compOffs[person].earned += days;
+            compOffs[person].balance += days;
+            compOffs[person].history.push({
+                type: 'earned',
+                days: days,
+                date: new Date().toISOString(),
+                reason: reason
+            });
+
+            const saved = await saveToGitHub();
+            if (saved) {
+                updateCompOffDisplay();
+                showAlert(`✓ Added ${days} comp-off day(s) for ${person}`, 'success');
+                e.target.reset();
+            }
+        });
+
         document.getElementById('prevMonth').addEventListener('click', () => {
             currentMonth.setMonth(currentMonth.getMonth() - 1);
             renderCalendar();
@@ -990,12 +1206,28 @@
 
         window.deleteLeave = async (index) => {
             if (confirm('Are you sure you want to delete this leave?')) {
+                const leave = leaves[index];
+
+                // Refund comp-off if this leave used comp-off
+                if (leave.isCompOff) {
+                    const leaveDays = getDatesInRange(leave.startDate, leave.endDate).length;
+                    compOffs[leave.person].used -= leaveDays;
+                    compOffs[leave.person].balance += leaveDays;
+                    compOffs[leave.person].history.push({
+                        type: 'refunded',
+                        days: leaveDays,
+                        date: new Date().toISOString(),
+                        reason: `Deleted leave from ${leave.startDate} to ${leave.endDate}`
+                    });
+                }
+
                 leaves.splice(index, 1);
                 const saved = await saveToGitHub();
                 if (saved) {
                     renderLeaves();
                     renderCalendar();
                     updateStats();
+                    updateCompOffDisplay();
                     showAlert('Leave deleted successfully! ✓', 'success');
                 }
             }
