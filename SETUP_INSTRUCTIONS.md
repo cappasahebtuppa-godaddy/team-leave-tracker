@@ -10,15 +10,24 @@ All team members will see the same data in real-time (refreshes every 30 seconds
 
 Each person needs to create their own token (one-time setup):
 
-1. Go to: https://github.com/settings/tokens/new
-2. Click **"Generate new token (classic)"**
-3. Give it a name: `Leave Tracker`
-4. Set expiration: Choose **"No expiration"** or **"90 days"** (you'll need to renew it)
-5. Select scopes: Check the **`repo`** checkbox (this gives full control of private repositories)
-6. Scroll down and click **"Generate token"**
-7. **IMPORTANT**: Copy the token immediately (it starts with `ghp_`)
+1. **Click this link (it pre-fills everything!)**: https://github.com/settings/tokens/new?description=Leave%20Tracker&scopes=repo
+
+2. **IMPORTANT - Set Expiration:**
+   - Select **"No expiration"** ⚠️ 
+   - This means you'll NEVER have to create another token!
+   - (If you select 90 days, you'll need to renew every 3 months)
+
+3. **Verify the scope:**
+   - Make sure **`repo`** is checked ✅
+   - (Should already be checked from the link above)
+
+4. Click **"Generate token"** (green button at bottom)
+
+5. **Copy the token immediately:**
+   - It starts with `ghp_`
+   - Click the copy icon
    - You won't be able to see it again!
-   - Save it somewhere safe
+   - **Keep it somewhere safe** (password manager, secure note)
 
 ### Step 2: Configure the App
 
