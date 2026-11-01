@@ -1,0 +1,21 @@
+{
+  "leaves": [],
+  "holidays": [
+    { "name": "New Year's Day", "date": "2026-01-01" },
+    { "name": "Republic Day", "date": "2026-01-26" },
+    { "name": "Wellness Day", "date": "2026-03-13" },
+    { "name": "Good Friday", "date": "2026-04-03" },
+    { "name": "May Day", "date": "2026-05-01" },
+    { "name": "Wellness Day", "date": "2026-05-15" },
+    { "name": "Bakrid / Eid al-Adha", "date": "2026-05-27" },
+    { "name": "Wellness Day", "date": "2026-08-14" },
+    { "name": "Independence Day", "date": "2026-08-15" },
+    { "name": "Mahatma Gandhi Jayanti", "date": "2026-10-02" },
+    { "name": "Wellness Day", "date": "2026-10-09" },
+    { "name": "Diwali", "date": "2026-11-08" },
+    { "name": "Diwali Break", "date": "2026-11-09" },
+    { "name": "Christmas Day", "date": "2026-12-25" }
+  ],
+  "version": "1.0",
+  "lastUpdated": "2026-11-01T00:00:00.000Z"
+}
