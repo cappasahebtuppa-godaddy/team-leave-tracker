@@ -59,10 +59,17 @@
       ]
     },
     "Afnaan Ladji": {
-      "earned": 0,
+      "earned": 2,
       "used": 0,
-      "balance": 0,
-      "history": []
+      "balance": 2,
+      "history": [
+        {
+          "type": "earned",
+          "days": 2,
+          "date": "2026-11-01T18:20:38.240Z",
+          "reason": " Working on Akamai Onboarding Requests"
+        }
+      ]
     }
   },
   "holidays": [
@@ -124,5 +131,5 @@
     }
   ],
   "version": "1.0",
-  "lastUpdated": "2026-11-01T18:20:31.536Z"
+  "lastUpdated": "2026-11-01T18:20:38.240Z"
 }
