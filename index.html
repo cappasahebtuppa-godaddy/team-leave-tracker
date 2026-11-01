@@ -478,6 +478,24 @@
                 </div>
             </div>
             <div class="calendar-grid" id="calendarGrid"></div>
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color chetan"></div>
+                    <span>Chetan Tuppad</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color subham"></div>
+                    <span>Subham Srivastava</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color afnaan"></div>
+                    <span>Afnaan Ladji</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color holiday"></div>
+                    <span>Public Holiday</span>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -658,11 +676,25 @@
                     const holiday = holidays.find(h => h.date === dateStr);
                     content += `<div class="day-label">${holiday.name}</div>`;
                 } else if (leavesOnDate.length > 0) {
-                    className += ' has-leave';
-                    if (leavesOnDate.length >= 2) {
-                        className += ' critical';
+                    if (leavesOnDate.length === 1) {
+                        // Single person on leave - apply their color
+                        const person = leavesOnDate[0].person;
+                        if (person === 'Chetan Tuppad') {
+                            className += ' chetan';
+                        } else if (person === 'Subham Srivastava') {
+                            className += ' subham';
+                        } else if (person === 'Afnaan Ladji') {
+                            className += ' afnaan';
+                        }
+                        content += `<div class="day-label">${person.split(' ')[0]}</div>`;
+                    } else if (leavesOnDate.length === 2) {
+                        // Two people on leave - apply striped pattern
+                        className += ' multiple critical';
+                        const person1 = leavesOnDate[0].person.split(' ')[0].toLowerCase();
+                        const person2 = leavesOnDate[1].person.split(' ')[0].toLowerCase();
+                        className += ` ${person1}-${person2}`;
+                        content += `<div class="day-label">${leavesOnDate[0].person.split(' ')[0]} + ${leavesOnDate[1].person.split(' ')[0]}</div>`;
                     }
-                    content += `<div class="day-label">${leavesOnDate.length} away</div>`;
                 }
 
                 html += `<div class="${className}">${content}</div>`;
