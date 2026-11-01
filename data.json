@@ -12,11 +12,6 @@
     },
     {
       "person": "Chetan Tuppad",
-      "startDate": "2026-11-16",
-      "endDate": "2026-11-17"
-    },
-    {
-      "person": "Chetan Tuppad",
       "startDate": "2026-11-25",
       "endDate": "2026-11-27"
     },
@@ -131,5 +126,5 @@
     }
   ],
   "version": "1.0",
-  "lastUpdated": "2026-11-01T18:20:38.240Z"
+  "lastUpdated": "2026-11-01T18:21:16.593Z"
 }
