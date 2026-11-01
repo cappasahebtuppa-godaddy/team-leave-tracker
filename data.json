@@ -9,6 +9,11 @@
       "person": "Chetan Tuppad",
       "startDate": "2026-11-10",
       "endDate": "2026-11-10"
+    },
+    {
+      "person": "Chetan Tuppad",
+      "startDate": "2026-11-16",
+      "endDate": "2026-11-17"
     }
   ],
   "holidays": [
@@ -70,5 +75,5 @@
     }
   ],
   "version": "1.0",
-  "lastUpdated": "2026-11-01T16:58:51.107Z"
+  "lastUpdated": "2026-11-01T16:59:10.342Z"
 }
