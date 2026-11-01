@@ -1,5 +1,11 @@
 {
-  "leaves": [],
+  "leaves": [
+    {
+      "person": "Afnaan Ladji",
+      "startDate": "2026-11-06",
+      "endDate": "2026-11-06"
+    }
+  ],
   "holidays": [
     {
       "name": "New Year's Day",
@@ -54,14 +60,14 @@
       "date": "2026-11-09"
     },
     {
-      "name": "Christmas Day",
-      "date": "2026-12-25"
-    },
-    {
       "name": "Christmas",
       "date": "2026-11-25"
+    },
+    {
+      "name": "Christmas Day",
+      "date": "2026-12-25"
     }
   ],
   "version": "1.0",
-  "lastUpdated": "2026-11-01T14:45:18.683Z"
+  "lastUpdated": "2026-11-01T14:46:50.711Z"
 }
