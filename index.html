@@ -914,6 +914,17 @@
             setTimeout(() => alert.remove(), 5000);
         }
 
+        // Security: Escape HTML to prevent XSS attacks
+        function escapeHtml(unsafe) {
+            if (!unsafe) return '';
+            return unsafe
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
         function updateCompOffDisplay() {
             const nameMap = {
                 "Chetan Tuppad": "chetan",
@@ -985,7 +996,7 @@
             container.innerHTML = leaves.map((leave, index) => `
                 <div class="leave-item">
                     <div class="leave-info">
-                        <div class="leave-person">${leave.person}${leave.isCompOff ? ' <span style="background: #9b59b6; color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: bold;">COMP-OFF</span>' : ''}</div>
+                        <div class="leave-person">${escapeHtml(leave.person)}${leave.isCompOff ? ' <span style="background: #9b59b6; color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: bold;">COMP-OFF</span>' : ''}</div>
                         <div class="leave-dates">${formatDateString(leave.startDate)} - ${formatDateString(leave.endDate)}</div>
                     </div>
                     <div style="display: flex; align-items: center;">
@@ -1007,7 +1018,7 @@
                 .map((holiday, index) => `
                 <div class="holiday-item">
                     <div class="holiday-info">
-                        <strong>${holiday.name}</strong> - ${formatDateString(holiday.date)}
+                        <strong>${escapeHtml(holiday.name)}</strong> - ${formatDateString(holiday.date)}
                     </div>
                     <button class="delete-btn" onclick="deleteHoliday(${index})">Delete</button>
                 </div>

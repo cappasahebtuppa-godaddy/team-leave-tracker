@@ -1,80 +1,60 @@
 {
-  "leaves": [],
+  "leaves": [
+    {
+      "person": "Afnaan Ladji",
+      "startDate": "2026-11-06",
+      "endDate": "2026-11-06",
+      "isCompOff": false
+    },
+    {
+      "person": "Chetan Tuppad",
+      "startDate": "2026-11-10",
+      "endDate": "2026-11-10",
+      "isCompOff": false
+    },
+    {
+      "person": "Chetan Tuppad",
+      "startDate": "2026-11-16",
+      "endDate": "2026-11-17",
+      "isCompOff": false
+    },
+    {
+      "person": "Chetan Tuppad",
+      "startDate": "2026-11-25",
+      "endDate": "2026-11-27",
+      "isCompOff": false
+    },
+    {
+      "person": "Chetan Tuppad",
+      "startDate": "2026-12-21",
+      "endDate": "2026-12-24",
+      "isCompOff": false
+    },
+    {
+      "person": "Chetan Tuppad",
+      "startDate": "2026-12-28",
+      "endDate": "2026-12-31",
+      "isCompOff": false
+    }
+  ],
   "compOffs": {
     "Chetan Tuppad": {
-      "earned": 4,
+      "earned": 0,
       "used": 0,
-      "balance": 4,
-      "history": [
-        {
-          "type": "earned",
-          "days": 4,
-          "date": "2026-11-01T18:20:24.141Z",
-          "reason": "2 Balance for working on Security Incident. 2 for Working on Akamai Onboarding Requests"
-        },
-        {
-          "type": "used",
-          "days": 2,
-          "date": "2026-11-01T18:21:58.910Z",
-          "reason": "Leave from 2026-11-16 to 2026-11-17"
-        },
-        {
-          "type": "used",
-          "days": 2,
-          "date": "2026-11-01T18:22:21.876Z",
-          "reason": "Leave from 2026-11-25 to 2026-11-26"
-        },
-        {
-          "type": "refunded",
-          "days": 2,
-          "date": "2026-11-01T18:23:28.654Z",
-          "reason": "Deleted leave from 2026-11-16 to 2026-11-17"
-        },
-        {
-          "type": "refunded",
-          "days": 2,
-          "date": "2026-11-01T18:23:34.490Z",
-          "reason": "Deleted leave from 2026-11-25 to 2026-11-26"
-        },
-        {
-          "type": "used",
-          "days": 2,
-          "date": "2026-11-01T18:26:31.434Z",
-          "reason": "Leave from 2026-11-16 to 2026-11-17"
-        },
-        {
-          "type": "refunded",
-          "days": 2,
-          "date": "2026-11-01T18:32:22.519Z",
-          "reason": "Deleted leave from 2026-11-16 to 2026-11-17"
-        }
-      ]
+      "balance": 0,
+      "history": []
     },
     "Subham Srivastava": {
-      "earned": 2,
+      "earned": 0,
       "used": 0,
-      "balance": 2,
-      "history": [
-        {
-          "type": "earned",
-          "days": 2,
-          "date": "2026-11-01T18:20:31.536Z",
-          "reason": " Working on Akamai Onboarding Requests"
-        }
-      ]
+      "balance": 0,
+      "history": []
     },
     "Afnaan Ladji": {
-      "earned": 2,
+      "earned": 0,
       "used": 0,
-      "balance": 2,
-      "history": [
-        {
-          "type": "earned",
-          "days": 2,
-          "date": "2026-11-01T18:20:38.240Z",
-          "reason": " Working on Akamai Onboarding Requests"
-        }
-      ]
+      "balance": 0,
+      "history": []
     }
   },
   "holidays": [
@@ -136,5 +116,5 @@
     }
   ],
   "version": "1.0",
-  "lastUpdated": "2026-11-01T18:32:22.519Z"
+  "lastUpdated": "2026-11-01T17:05:38.710Z"
 }
