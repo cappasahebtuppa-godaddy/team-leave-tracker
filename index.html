@@ -409,6 +409,13 @@
     <script>
         const teamMembers = ['Chetan Tuppad', 'Subham Srivastava', 'Afnaan Ladji'];
 
+        // Helper function to format date strings without timezone shifts
+        function formatDateString(dateStr) {
+            const [year, month, day] = dateStr.split('-');
+            const date = new Date(year, month - 1, day);
+            return date.toLocaleDateString('en-IN');
+        }
+
         // Default 2026 public holidays
         const default2026Holidays = [
             { name: "New Year's Day", date: "2026-01-01" },
@@ -499,7 +506,7 @@
                 <div class="leave-item">
                     <div class="leave-info">
                         <div class="leave-person">${leave.person}</div>
-                        <div class="leave-dates">${new Date(leave.startDate).toLocaleDateString('en-IN', { timeZone: 'Asia/Kolkata' })} - ${new Date(leave.endDate).toLocaleDateString('en-IN', { timeZone: 'Asia/Kolkata' })}</div>
+                        <div class="leave-dates">${formatDateString(leave.startDate)} - ${formatDateString(leave.endDate)}</div>
                     </div>
                     <div style="display: flex; align-items: center;">
                         <span class="leave-duration">${calculateDays(leave.startDate, leave.endDate)} day${calculateDays(leave.startDate, leave.endDate) !== 1 ? 's' : ''}</span>
@@ -520,7 +527,7 @@
                 .map((holiday, index) => `
                 <div class="holiday-item">
                     <div class="holiday-info">
-                        <strong>${holiday.name}</strong> - ${new Date(holiday.date).toLocaleDateString('en-IN', { timeZone: 'Asia/Kolkata' })}
+                        <strong>${holiday.name}</strong> - ${formatDateString(holiday.date)}
                     </div>
                     <button class="delete-btn" onclick="deleteHoliday(${index})">Delete</button>
                 </div>
@@ -605,7 +612,7 @@
             const availability = isAvailabilityMaintained(newLeave);
 
             if (!availability.valid) {
-                showAlert(`Cannot add leave: Two team members are already on leave on ${new Date(availability.date).toLocaleDateString('en-IN', { timeZone: 'Asia/Kolkata' })}. At least one person must be available.`);
+                showAlert(`Cannot add leave: Two team members are already on leave on ${formatDateString(availability.date)}. At least one person must be available.`);
                 return;
             }
 
