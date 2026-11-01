@@ -31,6 +31,33 @@
       "endDate": "2026-12-31"
     }
   ],
+  "compOffs": {
+    "Chetan Tuppad": {
+      "earned": 4,
+      "used": 0,
+      "balance": 4,
+      "history": [
+        {
+          "type": "earned",
+          "days": 4,
+          "date": "2026-11-01T18:20:24.141Z",
+          "reason": "2 Balance for working on Security Incident. 2 for Working on Akamai Onboarding Requests"
+        }
+      ]
+    },
+    "Subham Srivastava": {
+      "earned": 0,
+      "used": 0,
+      "balance": 0,
+      "history": []
+    },
+    "Afnaan Ladji": {
+      "earned": 0,
+      "used": 0,
+      "balance": 0,
+      "history": []
+    }
+  },
   "holidays": [
     {
       "name": "New Year's Day",
@@ -90,5 +117,5 @@
     }
   ],
   "version": "1.0",
-  "lastUpdated": "2026-11-01T17:05:38.710Z"
+  "lastUpdated": "2026-11-01T18:20:24.142Z"
 }
