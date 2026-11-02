@@ -83,6 +83,12 @@
       "startDate": "2026-11-18",
       "endDate": "2026-11-20",
       "isCompOff": false
+    },
+    {
+      "person": "Afnaan Ladji",
+      "startDate": "2026-11-05",
+      "endDate": "2026-11-06",
+      "isCompOff": true
     }
   ],
   "compOffs": {
@@ -198,14 +204,20 @@
     },
     "Afnaan Ladji": {
       "earned": 2,
-      "used": 0,
-      "balance": 2,
+      "used": 2,
+      "balance": 0,
       "history": [
         {
           "type": "earned",
           "days": 2,
           "date": "2026-11-01T18:41:01.520Z",
           "reason": "Working on Akamai Onboarding Requests"
+        },
+        {
+          "type": "used",
+          "days": 2,
+          "date": "2026-11-02T10:31:10.447Z",
+          "reason": "Leave from 2026-11-05 to 2026-11-06"
         }
       ]
     }
@@ -269,5 +281,5 @@
     }
   ],
   "version": "1.0",
-  "lastUpdated": "2026-11-02T10:30:56.244Z"
+  "lastUpdated": "2026-11-02T10:31:10.447Z"
 }
