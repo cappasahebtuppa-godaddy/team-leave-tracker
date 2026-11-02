@@ -29,6 +29,12 @@
       "startDate": "2026-11-10",
       "endDate": "2026-11-10",
       "isCompOff": true
+    },
+    {
+      "person": "Subham Srivastava",
+      "startDate": "2026-11-16",
+      "endDate": "2026-11-16",
+      "isCompOff": true
     }
   ],
   "compOffs": {
@@ -119,8 +125,8 @@
     },
     "Subham Srivastava": {
       "earned": 2,
-      "used": 1,
-      "balance": 1,
+      "used": 2,
+      "balance": 0,
       "history": [
         {
           "type": "earned",
@@ -133,6 +139,12 @@
           "days": 1,
           "date": "2026-11-02T10:20:44.215Z",
           "reason": "Leave from 2026-11-10 to 2026-11-10"
+        },
+        {
+          "type": "used",
+          "days": 1,
+          "date": "2026-11-02T10:20:58.388Z",
+          "reason": "Leave from 2026-11-16 to 2026-11-16"
         }
       ]
     },
@@ -209,5 +221,5 @@
     }
   ],
   "version": "1.0",
-  "lastUpdated": "2026-11-02T10:20:44.215Z"
+  "lastUpdated": "2026-11-02T10:20:58.388Z"
 }
