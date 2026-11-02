@@ -8,12 +8,6 @@
     },
     {
       "person": "Subham Srivastava",
-      "startDate": "2026-11-10",
-      "endDate": "2026-11-10",
-      "isCompOff": false
-    },
-    {
-      "person": "Subham Srivastava",
       "startDate": "2026-11-16",
       "endDate": "2026-11-16",
       "isCompOff": false
@@ -209,5 +203,5 @@
     }
   ],
   "version": "1.0",
-  "lastUpdated": "2026-11-02T10:18:18.262Z"
+  "lastUpdated": "2026-11-02T10:20:18.954Z"
 }
