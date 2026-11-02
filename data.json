@@ -77,12 +77,6 @@
       "startDate": "2026-12-14",
       "endDate": "2026-12-18",
       "isCompOff": false
-    },
-    {
-      "person": "Afnaan Ladji",
-      "startDate": "2026-12-14",
-      "endDate": "2026-12-18",
-      "isCompOff": false
     }
   ],
   "compOffs": {
@@ -269,5 +263,5 @@
     }
   ],
   "version": "1.0",
-  "lastUpdated": "2026-11-02T10:29:36.127Z"
+  "lastUpdated": "2026-11-02T10:29:56.452Z"
 }
