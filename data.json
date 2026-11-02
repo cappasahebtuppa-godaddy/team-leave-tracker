@@ -53,6 +53,12 @@
       "startDate": "2026-12-14",
       "endDate": "2026-12-14",
       "isCompOff": false
+    },
+    {
+      "person": "Chetan Tuppad",
+      "startDate": "2026-12-21",
+      "endDate": "2026-12-24",
+      "isCompOff": false
     }
   ],
   "compOffs": {
@@ -239,5 +245,5 @@
     }
   ],
   "version": "1.0",
-  "lastUpdated": "2026-11-02T10:22:01.462Z"
+  "lastUpdated": "2026-11-02T10:23:44.713Z"
 }
