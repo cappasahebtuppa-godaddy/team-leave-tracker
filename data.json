@@ -23,6 +23,12 @@
       "startDate": "2026-11-26",
       "endDate": "2026-11-26",
       "isCompOff": true
+    },
+    {
+      "person": "Subham Srivastava",
+      "startDate": "2026-11-10",
+      "endDate": "2026-11-10",
+      "isCompOff": true
     }
   ],
   "compOffs": {
@@ -113,14 +119,20 @@
     },
     "Subham Srivastava": {
       "earned": 2,
-      "used": 0,
-      "balance": 2,
+      "used": 1,
+      "balance": 1,
       "history": [
         {
           "type": "earned",
           "days": 2,
           "date": "2026-11-01T18:40:56.558Z",
           "reason": "Working on Akamai Onboarding Requests"
+        },
+        {
+          "type": "used",
+          "days": 1,
+          "date": "2026-11-02T10:20:44.215Z",
+          "reason": "Leave from 2026-11-10 to 2026-11-10"
         }
       ]
     },
@@ -197,5 +209,5 @@
     }
   ],
   "version": "1.0",
-  "lastUpdated": "2026-11-02T10:20:32.091Z"
+  "lastUpdated": "2026-11-02T10:20:44.215Z"
 }
