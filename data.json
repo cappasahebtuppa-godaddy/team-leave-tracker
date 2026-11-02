@@ -7,6 +7,12 @@
       "isCompOff": false
     },
     {
+      "person": "Subham Srivastava",
+      "startDate": "2026-11-16",
+      "endDate": "2026-11-16",
+      "isCompOff": false
+    },
+    {
       "person": "Chetan Tuppad",
       "startDate": "2026-11-16",
       "endDate": "2026-11-17",
@@ -197,5 +203,5 @@
     }
   ],
   "version": "1.0",
-  "lastUpdated": "2026-11-02T10:20:21.247Z"
+  "lastUpdated": "2026-11-02T10:20:24.141Z"
 }
