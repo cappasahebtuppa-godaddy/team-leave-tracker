@@ -1,5 +1,12 @@
 {
-  "leaves": [],
+  "leaves": [
+    {
+      "person": "Chetan Tuppad",
+      "startDate": "2026-11-10",
+      "endDate": "2026-11-10",
+      "isCompOff": false
+    }
+  ],
   "compOffs": {
     "Chetan Tuppad": {
       "earned": 4,
@@ -142,5 +149,5 @@
     }
   ],
   "version": "1.0",
-  "lastUpdated": "2026-11-01T18:56:02.231Z"
+  "lastUpdated": "2026-11-02T10:12:27.311Z"
 }
