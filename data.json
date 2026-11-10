@@ -13,12 +13,6 @@
       "isCompOff": true
     },
     {
-      "person": "Chetan Tuppad",
-      "startDate": "2026-11-26",
-      "endDate": "2026-11-26",
-      "isCompOff": true
-    },
-    {
       "person": "Subham Srivastava",
       "startDate": "2026-11-10",
       "endDate": "2026-11-10",
@@ -88,8 +82,8 @@
   "compOffs": {
     "Chetan Tuppad": {
       "earned": 4,
-      "used": 3,
-      "balance": 1,
+      "used": 2,
+      "balance": 2,
       "history": [
         {
           "type": "earned",
@@ -174,6 +168,12 @@
           "days": 1,
           "date": "2026-11-10T16:27:14.286Z",
           "reason": "Deleted leave from 2026-11-27 to 2026-11-27"
+        },
+        {
+          "type": "refunded",
+          "days": 1,
+          "date": "2026-11-10T16:27:35.984Z",
+          "reason": "Deleted leave from 2026-11-26 to 2026-11-26"
         }
       ]
     },
@@ -281,5 +281,5 @@
     }
   ],
   "version": "1.0",
-  "lastUpdated": "2026-11-10T16:27:14.287Z"
+  "lastUpdated": "2026-11-10T16:27:35.984Z"
 }
