@@ -55,12 +55,6 @@
       "isCompOff": false
     },
     {
-      "person": "Chetan Tuppad",
-      "startDate": "2026-11-25",
-      "endDate": "2026-11-25",
-      "isCompOff": false
-    },
-    {
       "person": "Afnaan Ladji",
       "startDate": "2026-12-14",
       "endDate": "2026-12-18",
@@ -281,5 +275,5 @@
     }
   ],
   "version": "1.0",
-  "lastUpdated": "2026-11-10T16:27:35.984Z"
+  "lastUpdated": "2026-11-10T16:27:49.918Z"
 }
