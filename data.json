@@ -350,6 +350,66 @@
     {
       "name": "Christmas Day",
       "date": "2026-12-25"
+    },
+    {
+      "name": "New Year's Day",
+      "date": "2027-01-01"
+    },
+    {
+      "name": "Republic Day",
+      "date": "2027-01-26"
+    },
+    {
+      "name": "Wellness Day",
+      "date": "2027-03-12"
+    },
+    {
+      "name": "Holi",
+      "date": "2027-03-22"
+    },
+    {
+      "name": "Good Friday",
+      "date": "2027-03-26"
+    },
+    {
+      "name": "Mahavir Jayanti",
+      "date": "2027-04-19"
+    },
+    {
+      "name": "Wellness Day",
+      "date": "2027-05-14"
+    },
+    {
+      "name": "Bakrid / Eid al-Adha",
+      "date": "2027-05-17"
+    },
+    {
+      "name": "Wellness Day",
+      "date": "2027-08-13"
+    },
+    {
+      "name": "Independence Day",
+      "date": "2027-08-15"
+    },
+    {
+      "name": "Mahatma Gandhi Jayanti",
+      "date": "2027-10-02"
+    },
+    {
+      "name": "Wellness Day",
+      "date": "2027-10-15"
+    },
+    {
+      "name": "Diwali Break",
+      "date": "2027-10-28"
+    },
+    {
+      "name": "Diwali",
+      "date": "2027-10-29"
+    },
+    {
+      "name": "Christmas Day",
+      "date": "2027-12-25"
     }
   ],
   "version": "1.0",
